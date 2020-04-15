@@ -22,8 +22,7 @@
 /nbproject/private/
 /build/
 /nbbuild/
-/dist/
-/nbdist/
+/dist/ /nbdist/
 /.nb-gradle/
 
 /.settings/
