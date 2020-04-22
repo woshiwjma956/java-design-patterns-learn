@@ -7,7 +7,7 @@ package com.ycorn.patterns.singleton;
  * @create 2020-04-21 23:08
  */
 public class DoubleCheckSingleTon {
-    private DoubleCheckSingleTon() {
+    private  DoubleCheckSingleTon() {
     }
 
     private static volatile DoubleCheckSingleTon INSTANCE = null;
