@@ -10,6 +10,12 @@ package com.ycorn.patterns.factory.abstractfacotry;
 public class AbstractFactoryTest {
 
     public static void main(String[] args) {
+        PizzaStore pizzaStore = new PizzaStore();
+        AbstractFactory bjPizzaFactory = new BJPizzaFactory();
 
+        pizzaStore.order(bjPizzaFactory.createPizza("fruit"));
+        System.out.println();
+        AbstractFactory cqPizzaFactory = new CQPizzaFactory();
+        pizzaStore.order(cqPizzaFactory.createPizza("meat"));
     }
 }

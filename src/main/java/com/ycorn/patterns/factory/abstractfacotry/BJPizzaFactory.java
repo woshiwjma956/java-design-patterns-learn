@@ -13,9 +13,9 @@ public class BJPizzaFactory implements AbstractFactory {
     @Override
     public Pizza createPizza(String type) {
       if("meat".equals(type)){
-          return new CQMeatPizza();
+          return new BJMeatPizza();
       }else if("fruit".equals(type)){
-          return new CQFruitPizza();
+          return new BJFruitPizza();
       }
       return null;
     }
