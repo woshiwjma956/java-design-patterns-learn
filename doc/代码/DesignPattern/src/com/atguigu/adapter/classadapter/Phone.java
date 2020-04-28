@@ -1,6 +1,8 @@
 package com.atguigu.adapter.classadapter;
 
-public class Phone {
+import com.ycorn.patterns.bridge.OldManPhone;
+
+public class Phone extends OldManPhone {
 
 	//³äµç
 	public void charging(IVoltage5V iVoltage5V) {
