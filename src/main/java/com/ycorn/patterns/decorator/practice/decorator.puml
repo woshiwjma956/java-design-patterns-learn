@@ -1,0 +1,21 @@
+@startuml
+
+abstract class Seasoning{
+    float weight; //重量
+    String name;//调理名
+    abstract float totalWeight();// 获取总重量
+}
+
+Seasoning <|-- PlantOil植物油
+Seasoning <|-- SesameOil芝麻油
+
+abstract class Decorator{
+    Seasoning seasoning;// 被装饰对象
+    float totalWeight();
+}
+Seasoning <|-* Decorator
+
+Decorator <|-- Garlic大蒜
+Decorator <|-- Salt盐
+Decorator <|-- Sugar糖
+@enduml

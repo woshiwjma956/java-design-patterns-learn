@@ -1,0 +1,26 @@
+@startuml
+
+interface Component{
+    void operation();
+    add(Component component);
+    remove(Component component);
+}
+
+class Left{
+    void operation();
+}
+note bottom:  叶子节点,无下级节点 只有操作方法
+
+
+class Composite {
+    void operation();
+    add(Component component);
+    remove(Component component);
+}
+note bottom:  非叶子节点 有一个集合管理下级节点
+
+Component <|-- Left
+Component <|-- Composite
+Client -> Component
+
+@enduml

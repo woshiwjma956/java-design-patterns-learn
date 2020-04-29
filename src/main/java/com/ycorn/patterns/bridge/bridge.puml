@@ -1,0 +1,25 @@
+@startuml
+interface Brand {
+	void open();
+	void close();
+	void call();
+}
+
+
+abstract class Phone{
+	Brand brand;
+	void open();
+	void close();
+	void call();
+}
+
+note right : 手机类实现和聚合品牌
+Brand <|-* Phone
+
+
+Brand <|--MiPhone
+Brand <|--IPhone
+
+Phone <|-- SmartPhone
+Phone <|-- OldManPhone
+@enduml
