@@ -1,0 +1,27 @@
+@startuml
+
+interface Flyweight{
+    operator();
+}
+
+class ConcreteFlyweight{}
+
+Flyweight <|-- ConcreteFlyweight
+Flyweight <|-- UnsharedConcreteFlyWeight
+
+
+class FlyweightFactory{
+    Map<String,Flyweight> pool;
+
+    getFlyWeight(String type);
+
+}
+Flyweight <-o FlyweightFactory
+
+class Client
+
+FlyweightFactory <- Client
+Flyweight <- Client
+
+
+@enduml

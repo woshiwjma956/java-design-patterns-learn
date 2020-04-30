@@ -1,0 +1,23 @@
+@startuml
+class User
+
+abstract class Website{
+    use(User user);
+}
+
+Website <|--ConcreteWebsite1
+Website <|--ConcreteWebsite2
+
+class WebsiteFactory{
+    Map<String,Website> pool;
+    Website getWebsite();
+    int getWebsiteCount();
+}
+
+Website <-o WebsiteFactory
+
+WebsiteFactory <- User
+ConcreteWebsite1 <- User
+ConcreteWebsite2 <- User
+
+@enduml
