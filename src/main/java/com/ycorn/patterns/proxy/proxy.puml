@@ -1,0 +1,16 @@
+@startuml
+
+class Client
+note left:  客户端
+class ProxyFactory
+note right:  代理对象工厂创建目标对象的代理对象放回给client
+class TargetClass
+note right: 被代理对象
+
+Client -> ProxyFactory
+
+
+
+
+ProxyFactory --> TargetClass
+@enduml
