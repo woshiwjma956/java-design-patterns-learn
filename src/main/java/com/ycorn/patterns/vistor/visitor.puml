@@ -1,0 +1,27 @@
+@startuml
+
+interface Visitor{
+void operation1();
+void operation2();
+}
+
+Visitor <|-- ConcreteVisitor
+
+interface Element{
+void accept(Visitor visitor);
+}
+
+Visitor <- Element
+
+Element <|-- ConcreteElement
+
+Client -> Visitor
+
+class ObjectStructure{
+Element element;
+}
+
+ObjectStructure --> Element
+
+Client --> ObjectStructure
+@enduml
