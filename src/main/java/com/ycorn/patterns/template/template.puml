@@ -1,0 +1,20 @@
+@startuml
+
+abstract class AbstractClass{
+final void template();
+void operation1();
+void operation2();
+void operation3();
+}
+note right: AbstractClass是抽象层 template方法中包含了所有的operation操作
+
+class ConcreteClass1
+AbstractClass <-- ConcreteClass1
+class ConcreteClass2
+AbstractClass <-- ConcreteClass2
+
+ConcreteClass1 <-- Client
+ConcreteClass2 <-- Client
+note right: Client客户端直接依赖具体的实现模板方法的类
+
+@enduml
