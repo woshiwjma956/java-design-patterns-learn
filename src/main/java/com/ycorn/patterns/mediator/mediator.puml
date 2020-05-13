@@ -1,0 +1,22 @@
+@startuml
+
+interface Mediator{
+registry(Colleague colleague);
+getMessage(Colleague colleague,String msg);
+}
+
+interface Colleague{
+setMediator(Mediator Mediator);
+sendMessage(String msg)
+}
+
+Mediator -* Colleague
+
+class ConcreteMediator{
+List<Colleague> colleagues;
+}
+Mediator <|-- ConcreteMediator
+
+Colleague <|-- ColleagueA
+Colleague <|-- Colleague2
+@enduml

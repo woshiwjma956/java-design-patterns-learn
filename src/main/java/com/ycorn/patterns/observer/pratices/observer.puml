@@ -1,0 +1,22 @@
+@startuml
+interface Observer{
+void update(Object data);
+}
+
+interface Subject{
+void notifyObserver();
+void registerObserver(Observer observer)
+void remoteObserver(Observer observer)
+}
+
+Observer <|-- ObserverA
+Observer <|-- ObserverB
+
+Subject <|-- ConcreteSubject
+
+ConcreteSubject <-- client
+ObserverA <-- client
+ObserverB <-- client
+
+
+@enduml
