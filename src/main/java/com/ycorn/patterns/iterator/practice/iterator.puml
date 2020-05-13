@@ -1,0 +1,37 @@
+@startuml
+
+Client --> Iterator
+Client --> Aggregate
+
+interface Iterator<E>{
+boolean hasNext();
+E next();
+void remove();
+}
+
+interface Aggregate{
+Iterator createIterator();
+}
+
+class ConcreteAggregate1{
+List<T> eles;
+Iterator createIterator();
+}
+
+class ConcreteAggregate2{
+T[] eles;
+Iterator createIterator();
+}
+
+Aggregate <-- ConcreteAggregate1
+Aggregate <-- ConcreteAggregate2
+
+Iterator <-- ConcreteIterator1
+Iterator <-- ConcreteIterator2
+
+ConcreteAggregate1 <|-- ConcreteIterator1
+ConcreteAggregate2 <|-- ConcreteIterator2
+
+
+
+@enduml
