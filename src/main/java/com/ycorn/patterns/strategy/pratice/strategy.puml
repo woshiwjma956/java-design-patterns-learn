@@ -1,0 +1,26 @@
+@startuml
+
+class Context{
+StrategyA strategyA;
+StrategyB strategyB;
+}
+Context o-- StrategyA
+Context o-- StrategyB
+
+interface StrategyA{
+void operation1();
+void operation2();
+}
+
+StrategyA <|-- ConcreteStrategyA1
+StrategyA <|-- ConcreteStrategyAb
+
+
+interface StrategyB{
+void operation3();
+}
+
+StrategyB <|-- ConcreteStrategyB1
+
+
+@enduml
