@@ -1,0 +1,27 @@
+@startuml
+
+class Client
+class Calculator
+Client -> Calculator
+
+interface Expression{
+void interpreter();
+}
+
+Calculator <|- Expression
+
+class VarExpression
+class SymbolExpression
+
+Expression <|-- VarExpression
+Expression <|--* SymbolExpression
+
+class SubExpression
+class AddExpression
+
+SymbolExpression <|-- SubExpression
+SymbolExpression <|-- AddExpression
+
+
+
+@enduml
