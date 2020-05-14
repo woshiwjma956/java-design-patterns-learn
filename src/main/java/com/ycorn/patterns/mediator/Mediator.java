@@ -14,3 +14,5 @@ public interface Mediator {
     void getMessage(Colleague colleague, String msg);
 
 }
+
+
